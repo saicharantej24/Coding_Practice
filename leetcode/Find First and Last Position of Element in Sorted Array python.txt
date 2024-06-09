@@ -1,0 +1,33 @@
+class Solution:
+    def searchRange(self, arr: List[int], tar: int) -> List[int]:
+        res=[0,0]
+        res[0]=self.fir(arr,tar)
+        res[1]=self.las(arr,tar)
+        return res
+    def fir(self,arr,tar):
+        l,r,ans=0,len(arr)-1,-1
+        while l<=r:
+            m=l+(r-l)//2
+            if tar==arr[m]:
+                ans=m
+                r=m-1
+            elif tar>arr[m]:
+                l=m+1
+            else:
+                r=m-1
+        return ans
+    def las(self,arr,tar):
+        l=0
+        r=len(arr)-1
+        ans=-1
+        while l<=r:
+            m=l+(r-l)//2
+            if tar==arr[m]:
+                ans=m
+                l=m+1
+            elif tar>arr[m]:
+                l=m+1
+            else:
+                r=m-1
+        return ans
+        

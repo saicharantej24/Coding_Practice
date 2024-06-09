@@ -1,0 +1,13 @@
+
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int tar) {
+        if(!root)
+        return false;
+        if(!root->left && !root->right)
+        return tar==root->val;
+        bool ls=hasPathSum(root->left,tar-root->val);
+        bool rs=hasPathSum(root->right,tar-root->val);
+        return ls||rs;
+    }
+};

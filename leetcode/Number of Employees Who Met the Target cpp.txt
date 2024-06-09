@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int numberOfEmployeesWhoMetTarget(vector<int>& a, int target) {
+        int c=0;
+        for(int i=0;i<a.size();i++)
+        {
+            if(a[i]>=target)c++;
+        }
+        return c;
+    }
+};
