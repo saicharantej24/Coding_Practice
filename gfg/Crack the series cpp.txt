@@ -1,0 +1,31 @@
+//{ Driver Code Starts
+//Initial Template for C++
+
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+//User function Template for C++
+
+// User function Template for C++
+class Solution {
+  public:
+    long double NthTerm(int n){
+        // code here
+        long double a[n];
+        a[0]=a[1]=2;
+        for(int i=2;i<n;i+=2)
+        {
+            a[i]=a[i-2]*a[i-2];
+        }
+        for(
+            int i=3;i<n;i+=2)
+            {
+                a[i]=a[i-2]*a[i-2]*a[i-2];
+            }
+            return a[n-1];
+    }
+};
+
+ 

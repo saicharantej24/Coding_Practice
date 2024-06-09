@@ -1,0 +1,26 @@
+//{ Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function template for C++
+
+class Solution{
+public:
+    int remove_duplicate(int a[],int n){
+        // code here
+        int c=1;
+        for(int i=0;i<n-1;i++)
+        {
+            if(a[i]!=a[i+1])
+            {
+                a[c++]=a[i+1];
+            }
+        }
+        return c;
+    }
+};
+

@@ -1,0 +1,27 @@
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+
+
+class Solution{
+    public:
+    void Rearrange(int a[], int n, int ans[])
+    {
+        sort(a,a+n);
+        int i=0,j=n-1;
+        int k=0;
+        while(i<=j && k<n)
+        {
+            ans[k]=a[i];
+            i++;
+            k++;
+            ans[k]=a[j];
+            j--;
+            k++;
+        }
+    }
+};
+
+

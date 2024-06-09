@@ -1,0 +1,68 @@
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution{
+    public:
+    // arr: input array
+    // num: size of array
+    //Function to find maximum circular subarray sum.
+    int kad(int a[],int n)
+    {
+        int  res=a[0];
+        int maxen=a[0];
+        for(int i=1;i<n;i++)
+        {
+            maxen=max(a[i],a[i]+maxen);
+            res=max(res,maxen);
+        }
+        return res;
+    }
+    int circularSubarraySum(int arr[], int n){
+        
+        // your code here
+        int max_nor=kad(arr,n);
+        if(max_nor<0)
+        return max_nor;
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            sum+=arr[i];
+            arr[i]=-arr[i];
+        }
+        int max_cir=sum+kad(arr,n);
+        return max(max_nor,max_cir);
+    }
+};
+
+//{ Driver Code Starts.
+
+int main()
+ {
+	int T;
+	
+	//testcases
+	cin>> T;
+	
+	while (T--)
+	{
+	    int num;
+	    
+	    //size of array
+	    cin>>num;
+	    int arr[num];
+	    
+	    //inserting elements
+	    for(int i = 0; i<num; i++)
+	        cin>>arr[i];
+	        
+	    Solution ob;
+	    //calling function
+	    cout << ob.circularSubarraySum(arr, num) << endl;
+	    
+	}
+	
+	return 0;
+}

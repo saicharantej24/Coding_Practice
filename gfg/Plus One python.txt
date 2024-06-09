@@ -1,0 +1,15 @@
+#User function Template for python3
+
+class Solution:
+    def increment(self, a, n):
+        # code here 
+        carry=1
+        for i in range(n-1,-1,-1):
+            sum=a[i]+carry
+            a[i]=sum%10
+            carry=sum//10
+        if carry!=0:
+            a.insert(0,carry)
+        return a
+            
+

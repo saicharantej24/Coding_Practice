@@ -1,0 +1,37 @@
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution{
+  public:
+    int thirdLargest(int a[], int n)
+    {
+         //Your code here
+         if(n<3)return -1;
+         int f=a[0];
+         int sec=INT_MIN;
+         int thi=INT_MIN;
+         for(int i=1;i<n;i++)
+         {
+             if(a[i]>f)
+             {
+                 thi=sec;
+                 sec=f;
+                 f=a[i];
+             }
+             else if(a[i]>sec)
+             {
+                 thi=sec;
+                 sec=a[i];
+             }
+             else if(a[i]>thi)
+             {
+                 thi=a[i];
+             }
+         }
+         return thi;
+    }
+
+};
+

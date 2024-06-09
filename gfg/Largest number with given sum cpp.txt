@@ -1,0 +1,36 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// Function to return Largest Number
+
+class Solution
+{
+    public:
+    //Function to return the largest possible number of n digits
+    //with sum equal to given sum.
+    string largestNumber(int n, int sum)
+    {
+        // Your code here
+        if(9*n<sum)return "-1";
+        string ans;
+        int s=sum;
+        while(s)
+        {
+            int numb=9;
+            while(numb>s)numb--;
+            ans+=to_string(numb);
+            s-=numb;
+            if(!s)break;
+        }
+        int b=ans.size();
+        while(b!=n)
+        {
+            ans+="0";
+            b++;
+        }return ans;
+    }
+};
+

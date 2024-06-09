@@ -1,0 +1,19 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution{
+    public:
+    
+    //Function to rotate an array by d elements in counter-clockwise direction. 
+    void rotateArr(int arr[], int k, int n){
+        // code here
+        k=k%n;
+        reverse(arr,arr+n);
+        reverse(arr+n-k,arr+n);
+        reverse(arr,arr+n-k);
+        
+    }
+};

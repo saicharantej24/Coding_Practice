@@ -1,0 +1,23 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution{
+  public:
+    int findExtra(int a[], int b[], int n) {
+        // add code here.
+        int low=0;
+        int high=n-1;
+        while(low<high)
+        {
+            int m=(low+high)/2;
+            if(a[m]==b[m])
+            low=m+1;
+            else
+            high=m;
+        }
+        return low;
+    }
+};
+
