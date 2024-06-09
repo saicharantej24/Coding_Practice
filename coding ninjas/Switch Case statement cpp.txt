@@ -1,0 +1,12 @@
+double areaSwitchCase(int ch, vector<double> a) {
+    double ans = 0.0;
+    switch(ch) {
+        case 1:
+            ans = M_PI * a[0] * a[0];
+            break;
+        case 2:
+            ans = a[0] * a[1];
+            break;
+    }
+    return ans;
+}

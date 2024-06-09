@@ -1,0 +1,46 @@
+int fir(vector<int>& arr, int n, int x)
+{
+    int l=0,h=n-1,ans=-1;
+    while(l<=h)
+    {
+        int m=(l+h)/2;
+        if(arr[m]<x)
+        {
+       
+            l=m+1;
+        }
+        else if(arr[m]>x)
+        h=m-1;
+        else{
+            ans=m;
+            h=m-1;
+        }
+    }
+    return ans;
+}
+int las(vector<int>& arr, int n, int x)
+{ 
+    int l=0,h=n-1,ans=-1;
+while(l<=h)
+{
+    int m=(l+h)/2;
+    if (arr[m] > x) {
+            h = m - 1;
+    }
+     else if(arr[m]<x)
+            l = m + 1;
+            else{
+                ans=m;
+                l=m+1;
+            }
+}
+return ans;
+
+}
+pair<int, int> firstAndLastnPosition(vector<int>& arr, int n, int k)
+{
+    // Write your code here
+    int f=fir(arr,n,k);
+    int l=las(arr,n,k);
+    return make_pair(f,l);
+}

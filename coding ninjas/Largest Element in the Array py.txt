@@ -1,0 +1,13 @@
+from sys import *
+from collections import *
+from math import *
+
+def largestElement(arr: [], n: int) -> int:
+    maxi=arr[0]
+    for i in range(n):
+        if arr[i]>maxi:
+            maxi=arr[i]
+    return maxi
+
+    # Write your code from here.
+    pass

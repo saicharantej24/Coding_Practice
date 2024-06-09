@@ -1,0 +1,43 @@
+import java.util.*;
+public class Solution {
+    public static List< Integer > majorityElement(int []v) {
+        // Write your code here
+        int c1=0,c2=0;
+        int n=v.length;
+        int e1=Integer.MIN_VALUE;
+        int e2=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+        if(c1==0 && e2!=v[i] )
+        {
+            c1=1;
+            e1=v[i];
+        }
+        else if(c2==0 && e1!=v[i])
+        {
+            c2=1;
+            e2=v[i];
+        }
+        else if(v[i]==e1)c1++;
+        else if(v[i]==e2)c2++;
+        else
+        {
+            c1--;
+            c2--;
+        }
+        }
+        int c3=0,c4=0;
+        List<Integer> ls=new ArrayList<Integer>();
+        int mini=(int)(n/3)+1;
+        for(int i=0; i<n;i++)
+        {
+            if(v[i]==e1)c3++;
+            if(v[i]==e2)c4++;
+        }
+        if(c3>=mini)
+        ls.add(e1);
+        if(c4>=mini)
+        ls.add(e2);
+        
+        return ls;
+    }
+}

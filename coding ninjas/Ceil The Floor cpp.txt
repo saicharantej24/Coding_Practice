@@ -1,0 +1,36 @@
+
+
+int fl(vector<int> &arr, int n, int x) {
+    int l = 0, h = n - 1, ans = -1;
+    while (l <= h) {
+        int m = (l + h) / 2;
+        if (arr[m] <= x) {
+            ans = arr[m];
+            l = m + 1;
+        } else {
+            h = m - 1;
+        }
+    }
+    return ans;
+}
+
+int cei(vector<int> &arr, int n, int x) {
+    int l = 0, h = n - 1, ans = -1;
+    while (l <= h) {
+        int m = (l + h) / 2;
+        if (arr[m] >= x) {
+            ans = arr[m];
+            h = m - 1;
+        } else {
+            l = m + 1;
+        }
+    }
+    return ans;
+}
+
+pair<int, int> getFloorAndCeil(vector<int> &a, int n, int x) {
+    int f = fl(a, n, x);
+    int c = cei(a, n, x);
+    return make_pair(f, c);
+}
+

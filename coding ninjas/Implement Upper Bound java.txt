@@ -1,0 +1,18 @@
+public class Solution {
+    public static int upperBound(int []arr, int x, int n){
+        // Write your code here.
+        int l=0,h=n-1,ans=n;
+        while(l<=h)
+        {
+            int m=(l+h)/2;
+            if(arr[m]>x)
+            {
+                h=m-1;
+                ans=m;
+            }
+            else
+            l=m+1;
+        }
+        return ans;
+    }
+}

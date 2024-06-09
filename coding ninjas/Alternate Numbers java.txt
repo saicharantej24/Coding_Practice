@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+ class Solution {
+    public static int[] alternateNumbers(int []a) {
+        // Write your code here.
+         ArrayList<Integer> pos=new ArrayList<Integer>();
+            ArrayList<Integer> neg=new ArrayList<Integer>();
+            int n=a.length;
+            for(int i=0;i<n;i++)
+            {
+                if(a[i]>0)
+                {
+                    pos.add(a[i]);
+                }
+                else
+                neg.add((a[i]));
+            }
+            if(pos.size()<neg.size())
+            {
+                for(int i=0;i<pos.size();i++)
+                {
+                    a[2*i]=pos.get(i);
+                    a[2*i+1]=neg.get(i);
+                }
+                for(int i=pos.size();i<neg.size();i++)
+                a[i]=neg.get(i);
+            }
+            else{
+                for(int i=0;i<neg.size();i++)
+        { a[2*i]=pos.get(i);
+                    a[2*i+1]=neg.get(i);
+            }           
+
+for(int i=neg.size();i<pos.size();i++)
+{
+    a[i]=pos.get(i);
+}
+
+
+
+ }
+ return a;
+}
+}
